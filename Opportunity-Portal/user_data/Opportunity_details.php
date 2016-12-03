@@ -93,7 +93,7 @@
                 <td><?php echo $row1[0];?></td>
                 <td><?php echo $row1[1];?></td>
                 <td><?php echo $row1[2];?></td>
-                <!--Fetch images from the image url. Images will be in a cloud storage-->                
+                <!--Fetch images from the image url. Images will be in a cloud storage.-->                
             </tr>
             <?php endwhile;?>
 
