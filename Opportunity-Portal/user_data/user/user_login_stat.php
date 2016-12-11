@@ -1,5 +1,5 @@
-<?php
-	session_start();
+<?php	
+
 
 	$dbhost = "localhost";
 	$dbuser = "root";
@@ -29,8 +29,10 @@
 		$result = mysql_query($sql) or die("Failed to query database".mysql_error());
 
 		if ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-			$_SESSION['id'] = $row['user_id'];
-			header("Location: UserPanel.html");		
+			$Uname = $row["1"];
+			$_SESSION['UName'] = $Uname;
+			
+			header("Location: UserPanel.html");				
 			exit;	
 		}else{
 			echo "Username or password is incorrect";
