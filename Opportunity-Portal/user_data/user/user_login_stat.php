@@ -1,13 +1,14 @@
 <?php	
 
+	session_start();
+
 
 	$dbhost = "localhost";
 	$dbuser = "root";
 	$dbpass = "";
 	$db_name = "optest";
 
-	mysql_connect($dbhost,$dbuser,$dbpass);
-	mysql_select_db($db_name);
+	$non=mysqli_connect($dbhost,$dbuser,$dbpass,$db_name) or die("Can't connect to server");
 	
 	//Get values passed from User_Login.html
 	$usrname = $_POST['Username'];
@@ -24,18 +25,23 @@
 	}else{
 		
 
-		$sql = "select * from user_data where user_name ='$usrname' and user_pwd ='$pwd' ";
+		//Query to retrieve data from db
+		$sql = "SELECT user_name FROM user_data WHERE user_name ='$usrname' AND user_pwd ='$pwd' ";
 
-		$result = mysql_query($sql) or die("Failed to query database".mysql_error());
+		$result = mysqli_query($non,$sql);
 
-		if ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-			$Uname = $row["1"];
-			$_SESSION['UName'] = $Uname;
-			
-			header("Location: UserPanel.html");				
-			exit;	
-		}else{
+		while($row=mysqli_fetch_array($result)) {
+		$name=$row["0"];
+	}
+
+		if (mysqli_affected_rows($non)==0) {
 			echo "Username or password is incorrect";
+				
+		}else{
+			$_SESSION['UName'] = $name;
+			
+			header("Location: UserPanel.php");				
+			exit;
 		}
 
 		

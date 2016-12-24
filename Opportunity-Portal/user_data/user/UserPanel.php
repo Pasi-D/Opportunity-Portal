@@ -45,6 +45,16 @@
         font-weight: 400;
       }
 
+    .subheader{
+        color: white;
+        text-shadow: 1px 1px 2px white, 0 0 25px blue, 0 0 5px darkblue;  
+        color: #000;
+        font-family: 'Exo', sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+
+    }
+
       
 
     
@@ -65,11 +75,20 @@
   </head>
   <body>
   <div class="body"></div>
+
+    <div style="align-items: center; position: relative; top: 100px">
+      <h6 style="text-align: center;" class="subheader">
+        <?php 
+            echo "Hello ".$_SESSION['UName'];
+         ?>
+      </h6>
+    </div>
+    
     
     <div style="align-items: center; position: relative; top: 105px">
       <h1 style="text-align: center;" class="header">
         <span style="letter-spacing:0.04em;">
-           <span style="color: #FFFFFF;">Welcome to the Opportunity Portal</span>
+           <span style="color: #FFFFFF;">Welcome to the Opportunity Portal</span>           
         </span>
       </h1>
     </div>
