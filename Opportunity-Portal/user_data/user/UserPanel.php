@@ -55,10 +55,14 @@
 
     }
 
-      
-
-    
-
+    .edits{
+      color: #0557cd;
+      text-shadow: 1px 1px 1px #00054d, 0 0 25px #000, 1px 1px 5px #00054d;
+      color: #00054d;
+      font-family: 'Exo', sans-serif;
+      font-size: 32px;
+      font-weight: 400;
+    }
 
     
     </style>
@@ -93,19 +97,23 @@
       </h1>
     </div>
 
-    <div style="text-align: center; position: relative; top: 230px; ">
-      <div class="btn-group btn-group-lg">
-        <button class="btn btn-default">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true" style="font-size: 2em; letter-spacing: 0.05cm"></span>
-          <p>Edit User Details</p>
-        </button>              
-      </div>
+    <div style="text-align: center; position: relative; top: 220px; ">
+
       <div class="btn-group btn-group-lg">
         <button class="btn btn-default" onclick="window.location.href='../Opportunity_details.php'">
           <span class="glyphicon glyphicon-th" aria-hidden="true" style="font-size: 2em; letter-spacing: 0.05cm"></span>
           <p>View Opportunities</p>
         </button>
       </div>
+
+      <br>
+      <br>
+      <h6 class="edits">
+        <?php 
+          echo "<a href='./edit_user_details.php?uname=".$_SESSION['UName']."'>Edit My Details</a>";
+         ?>
+      </h6>
+
     </div>
 
 
