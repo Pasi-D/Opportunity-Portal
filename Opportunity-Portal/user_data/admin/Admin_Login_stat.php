@@ -8,11 +8,15 @@
   
   $username=$_POST['inputUserName'];
   $password=$_POST['inputPassword'];    
-    if($username=="admin" && $password=="admin") {     
+    
+    if($username=="admin" && $password=="admin") {    
+
       $_SESSION["Username"]=$username;
-      header("Location:./Admin_Panel.html");
-      exit;   
+      header("Location:./Admin_Panel.php");
+      exit;  
+
     } else { 
+
       echo "Wrong Username or password";
     }
   
