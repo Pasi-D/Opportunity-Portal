@@ -100,9 +100,17 @@
     <div style="text-align: center; position: relative; top: 220px; ">
 
       <div class="btn-group btn-group-lg">
-        <button class="btn btn-default" onclick="window.location.href='../Opportunity_details.php'">
+        <button class="btn btn-default" style="width: 10em;height: 5em" onclick="window.location.href='../Opportunity_details.php'">
           <span class="glyphicon glyphicon-th" aria-hidden="true" style="font-size: 2em; letter-spacing: 0.05cm"></span>
           <p>View Opportunities</p>
+        </button>
+      </div>
+      <br>
+      <br>
+      <div class="btn-group btn-group-lg">
+        <button class="btn btn-default" style="width: 10em;height: 5em" onclick="window.location.href='./user_logoff.php'">
+          <span class="glyphicon glyphicon-off" aria-hidden="true" style="font-size: 2em; letter-spacing: 0.05cm"></span>
+          <p>Logoff</p>
         </button>
       </div>
 
