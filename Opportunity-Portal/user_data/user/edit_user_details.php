@@ -16,15 +16,16 @@
 
     $upresult = mysql_query($upquery);
 
-    if (!upresult) {
+    if (!$upresult) {
       $err = mysql_error();
       print($err);
       exit();
     }
 
-    echo "<font color='blue'><b>Information has been updated.</b></font>";
+    echo "<font color='blue'><b>Information has been updated. Redirecting to the User panel.</b></font>";
     echo "<br>";
-    echo "<a href='./UserPanel.php'>back</a>";
+    /*echo "<a href='./UserPanel.php'>back</a>";*/
+    header("refresh:3; url=./UserPanel.php");/*Redirects to the user panel after 3 second delay*/
 
     exit();
 
