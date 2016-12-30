@@ -1,4 +1,12 @@
 <?php 
+
+    session_start();
+
+    if (!isset($_SESSION["UName"])) {
+    header("Location: ./Login_Error.php");
+    exit();
+  }
+
 	include './DB/connector.php';
 
 	$query = "SELECT * FROM opportunity";
