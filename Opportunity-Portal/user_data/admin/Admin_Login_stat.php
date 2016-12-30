@@ -17,7 +17,8 @@
 
     } else { 
 
-      echo "Wrong Username or password";
+      echo "Wrong Username or password"."<br>"."<br>"."<center>........Redirecting.......</center>";
+      header("Refresh:2 url=./Admin_login.html");
     }
   
  ?>

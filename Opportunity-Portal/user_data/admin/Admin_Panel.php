@@ -119,7 +119,7 @@
           <br>
           <div class="row">
             <div class="btn-group btn-group-lg" role="group" aria-label="...">
-              <button type="button" class="btn btn-default" style="width: 16em;height: 5em" onclick="window.location.href='./Opportunity_Registration.html'">
+              <button type="button" class="btn btn-default" style="width: 16em;height: 5em" onclick="window.location.href='./Opportunity_Registration.php'">
                 <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 2em"></span>
                 <p class="btntext"><b>ADD OPPORTUNITIES</b></p>
               </button>
