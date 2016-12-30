@@ -25,7 +25,8 @@
 		$sql = "INSERT INTO user_data (	first_name,last_name,nic,gender,district,email_address,user_name,user_pwd)  
     					VALUES ('$fname','$lname','$nic','$gender','$district','$email','$uname','$upass')"; 
     	mysql_query($sql) or die("Query failed".mysql_error());
-    	echo "Registerd Successfully";
+    	echo "<font color='green'><b>Registerd Successfully</b></font>";
+    	header("refresh:2 url=./Reg_Form.html");
 	}else{
     	echo "Username exist";
     }			
