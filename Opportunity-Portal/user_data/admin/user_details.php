@@ -1,12 +1,31 @@
 <?php
 
     session_start();
+
+    $message = "";
     
     include '../DB/connector.php';
 
     $query = "SELECT * FROM user_data";
 
     $result = mysql_query($query) or die("Error: ".mysqli_error($connect));
+
+    /*Deleting users */
+    if (isset($_GET["uname_del"])) {
+        $user_name = $_GET["uname_del"];
+
+        $del_query = "DELETE FROM user_data WHERE user_name = '$user_name'";
+        $del_result = mysql_query($del_query);        
+        header("Refresh:0 url=./user_details.php");
+        if (!$del_result) {
+            $err = mysql_error();
+            print $err;
+            exit();
+        }
+
+        
+    }
+
 
 ?>
 
@@ -19,6 +38,12 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>User Details</title>
+
+    <script type="text/javascript">
+        function delete_test() {
+            return confirm("Do you want to delete these information");
+        }
+    </script>
 
       <style>
         @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
@@ -42,6 +67,7 @@
         font-weight: 800;
         text-shadow: 2px 2px #000;
       }
+
 
       </style>
 
@@ -107,8 +133,8 @@
                 <td><?php echo $row1[4];?></td>
                 <td><?php echo $row1[5];?></td>
                 <td><?php echo $row1[6];?></td>
-                <td><?php echo "<a href=''>Edit</a>";?></td>
-                <td><?php echo "<a href=''>Delete</a>";?></td>
+                <td><?php echo "<a href='../user/edit_user_details.php?uname=".urlencode($row1[7])."'>Edit</a>";?></td>
+                <td><?php echo "<a onClick='return delete_test()' href='?uname_del=".urlencode($row1[7])."'>Delete</a>";?></td>
             </tr>
             <?php endwhile;?>
 
@@ -123,8 +149,13 @@
             </tfoot>
         </table>
 
+        
+        
+
 
 </body>
+
+        <!--Footable Javascript-->
         <script type="text/javascript">
                
                $(document).ready(function(){
