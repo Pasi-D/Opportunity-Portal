@@ -2,7 +2,7 @@
 
     session_start();
 
-    if (!isset($_SESSION["UName"])) {
+    if (!isset($_SESSION["Username"])) {
     header("Location: ./Login_Error.php");
     exit();
   }

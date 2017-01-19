@@ -25,7 +25,7 @@
     echo "<font color='blue'><b>Information has been updated. Redirecting to the User panel.</b></font>";
     echo "<br>";
     /*echo "<a href='./UserPanel.php'>back</a>";*/
-    header("refresh:3; url=./UserPanel.php");/*Redirects to the user panel after 3 second delay*/
+    header("Refresh:3 ; url=./UserPanel.php");/*Redirects to the user panel after 3 second delay*/
 
     exit();
 

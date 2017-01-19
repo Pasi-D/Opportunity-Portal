@@ -4,5 +4,5 @@
 	if (isset($_SESSION["UName"])) {
 		unset($_SESSION["UName"]);		
 	}
-	header("Location: ./User_Login.html");
+	header("Location: ../../index.html");
  ?>
