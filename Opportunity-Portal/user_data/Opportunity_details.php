@@ -88,7 +88,8 @@
             <tr>    
                 <th>#</th>            
                 <th>Opporunity Name</th>
-                <th>Description Name</th>                
+                <th>Description Name</th>  
+                <th>Preview</th>              
             </tr>
             </thead>
 
@@ -101,7 +102,7 @@
                 <td><?php echo $row1[0];?></td>
                 <td><?php echo $row1[1];?></td>
                 <td><?php echo $row1[2];?></td>
-                <!--Fetch images from the image url. Images will be in a cloud storage.-->                
+                <td><?php echo "<img src=\"".$row1[3]."\">"; ?></td>               
             </tr>
             <?php endwhile;?>
 

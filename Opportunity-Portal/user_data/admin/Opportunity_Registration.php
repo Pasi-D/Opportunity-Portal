@@ -1,3 +1,36 @@
+<?php 
+  require 'Cloudinary.php';
+  require 'Uploader.php';
+  require 'Api.php';
+
+  \Cloudinary::config(array(
+    "cloud_name" => "dmcxtajr1",
+    "api_key" => "844387894658348",
+    "api_secret" => "mIXUIyAY4Ot7vSyX6QqS1AmtmVA"
+  ));
+
+  include_once '../DB/connector.php';
+  
+  if (isset($_POST["submit"])) {
+    $cloudUpload = \Cloudinary\Uploader::upload($_FILES["filename"]['tmp_name']);
+
+    $Opponame = $_POST['opponame'];
+    $oppdesc = $_POST['oppodesc'];
+    $version = $cloudUpload[version];
+    $public_id = $cloudUpload[public_id];
+    //Edit this to customize the image preview 
+    //$url = "http://res.cloudinary.com/dmcxtajr1/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/v".$version."/".$public_id.".jpg";
+    $url = $cloudUpload[secure_url];
+  
+    //Upload images to a cloud storage get the image url and add it to the database.
+
+    $sql = "INSERT INTO opportunity (opportunity_name,opportunity_description,img_url) VALUES ('$Opponame','$oppdesc','$url')";
+    mysql_query($sql) or die("Query failed".mysql_error());
+
+      //echo "Opportunity Registered Successfully";
+      header("refresh:3; url=./Admin_Panel.php");/*On success redirects to the admin panel after 3 seconds*/
+  }
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +115,7 @@
               </div>
 
               <div class="container-fluid" style="margin-top: 100px">
-                  <form name="opreg" action="Op_Reg_stat.php" method="POST" autocomplete="off">
+                  <form enctype="multipart/form-data" method="POST" autocomplete="off">
                     <div class="form-group">
                       <label for="Opname">Opportunity Name</label>
                       <input type="text" class="form-control" id="Opname" name="opponame" placeholder="Opportunity Name">
@@ -96,14 +129,14 @@
                       <label for="inputImage">File input</label>
                       <!--<input type="file" name="filename" id="inputImage" accept="image/gif, image/jpeg, image/png">-->
 
-                      <input type='file' name="filename" id="inputImage" accept="image/gif, image/jpeg, image/png" onchange="readURL(this);"/>
+                      <input type='file' name="filename" id="filename" accept="image/gif, image/jpeg, image/png" onchange="readURL(this);"/>
                       <br>
                       <center><img id="opimage" src="#" alt="----Your Image Here----" /></center>
 
                       
                     </div>
                     
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-success" name="submit">Submit</button>
                   </form>  
                 </div>
             </div>

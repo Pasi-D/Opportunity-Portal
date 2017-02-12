@@ -5,7 +5,7 @@
 
 	$dbhost = "localhost";
 	$dbuser = "root";
-	$dbpass = "";
+	$dbpass = "123";
 	$db_name = "optest";
 
 	$non=mysqli_connect($dbhost,$dbuser,$dbpass,$db_name) or die("Can't connect to server");
@@ -14,11 +14,12 @@
 	$usrname = $_POST['Username'];
 	$pwd = $_POST['password'];
 
-		//To prevent mysql injection
+		/*To prevent mysql injection
 		$usrname = stripcslashes($usrname);
 		$pwd = stripcslashes($pwd);
 		$usrname = mysql_real_escape_string($usrname);
 		$pwd = mysql_real_escape_string($pwd);
+		*/
 
 	if (empty($usrname)) {		
 		exit();
