@@ -5,14 +5,10 @@
  	$DBPASS = "123";
  	$DBNAME = "optest";
 	//database connection info
-	$connect = mysql_connect($DBHOST,$DBUSER,$DBPASS);
-	$dbconnect = mysql_select_db($DBNAME); 
+	$con = mysqli_connect($DBHOST,$DBUSER,$DBPASS,$DBNAME);
 
-	if(!$connect){
-		die("Connection Failed: " . mysql_error());
-	}
-
-	if (!$dbconnect) {
-		die("Database Connection failed : " . mysql_error());
-	}
+	// Check connection
+	if (mysqli_connect_errno()){
+  		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  	}
 ?>

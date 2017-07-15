@@ -4,21 +4,27 @@
   
   //Admin Username = admin
   //Admin Password = admin
-  
+  include_once '../DB/connector.php';
   
   $username=$_POST['inputUserName'];
   $password=$_POST['inputPassword'];    
     
-    if($username=="admin" && $password=="admin") {    
+  
+  $sql = "SELECT Admin_Id FROM administrators WHERE Admin_User_Name = '$username' AND Admin_Password='$password'";
 
-      $_SESSION["Username"]=$username;
-      header("Location:./Admin_Panel.php");
-      exit;  
+  $result = mysqli_query($con, $sql);
 
-    } else { 
+  while($row=mysqli_fetch_array($result)) {
+      $adminId=$row["0"];
+  }
 
-      echo "Wrong Username or password"."<br>"."<br>"."<center>........Redirecting.......</center>";
-      header("Refresh:2 url=./Admin_login.html");
+  if (mysqli_affected_rows($con)==0) {
+      echo "Username or password is incorrect";        
+  }else{
+      $_SESSION['AdminId'] = $adminId;
+      
+      header("Location: Admin_Panel.php");        
+      exit;
     }
   
  ?>

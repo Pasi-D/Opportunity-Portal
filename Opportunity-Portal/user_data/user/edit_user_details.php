@@ -199,6 +199,7 @@
                           <input type="radio" value="Female" name="sex" <?php if($gender == "Female") echo "CHECKED"; ?>> Female
                         </label>                          
                       </div>
+                      <!-- District Details Removed
                       <div class="form-group">
                         <label for="inputDistrict" class="col-sm-2 control-label">Select District</label>
                         <select size="1" name="district" id="" class="col-sm-6" style="margin-top: 3px; margin-left: 18px">
@@ -228,7 +229,7 @@
                                 <option value="Trincomalee" <?php if($district == "Trincomalee") echo "SELECTED"; ?>>Trincomalee</option>
                                 <option value="Vavuniya" <?php if($district == "Vavuniya") echo "SELECTED"; ?>>Vavuniya</option>
                       </select>
-                      </div>
+                      </div> -->
                       <div class="form-group">
                         <label for="inputEmail" class="col-sm-2 control-label" class="inform">Email Address</label>
                         <div class="col-sm-10">

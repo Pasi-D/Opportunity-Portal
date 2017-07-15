@@ -8,7 +8,7 @@
 
     $query = "SELECT * FROM user_data";
 
-    $result = mysql_query($query) or die("Error: ".mysqli_error($connect));
+    $result = mysqli_query($con,$query) or die("Error: ".mysqli_error($connect));
 
     /*Deleting users */
     if (isset($_GET["uname_del"])) {
@@ -124,7 +124,7 @@
 
                 <!-- populate table from mysql database -->
             <?php             
-            while($row1 = mysql_fetch_array($result)):;?>
+            while($row1 = mysqli_fetch_array($result)):;?>
             <tr>
                 <td><?php echo $row1[0];?></td>
                 <td><?php echo $row1[1];?></td>
