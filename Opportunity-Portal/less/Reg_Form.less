@@ -1,0 +1,57 @@
+@import "Fonts";
+@images: "../img/";
+
+
+.body{
+        position: fixed; 
+        overflow-y: scroll;
+        width: 100%;
+        top: -20px;
+        left: -20px;
+        right: -40px;
+        bottom: -40px;
+        width: auto;
+        height: auto;
+        background-image: url("@{images}Reg.jpg");
+        background-size: cover;
+        -webkit-filter: blur(2px);
+      
+      }      
+
+.header{
+        position: relative;
+        
+      div{
+        float: left;
+        color: #000;
+        font-family: 'Exo', sans-serif;
+        font-size: 50px;
+        font-weight: 400;
+      }
+
+      div span{
+        color: #F29E20 !important;
+      }
+}
+
+//Popover 
+        .popover {
+            border: 2px dotted red;
+        }
+        /* Popover Header */
+        .popover-title {
+            background-color: #73AD21; 
+            color: #000; 
+            font-size: 28px;
+            text-align:center;
+        }
+        /* Popover Body */
+        .popover-content {
+            background-color: coral;
+            color: #FFFFFF;
+            padding: 25px;
+        }
+        /* Popover Arrow */
+        .arrow {
+            border-right-color: red !important;
+        }

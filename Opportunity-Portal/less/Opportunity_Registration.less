@@ -1,0 +1,38 @@
+@import "Fonts";
+
+        article, aside, figure, footer, header, hgroup, 
+        menu, nav, section { display: block; }
+        
+@images: "../img/";
+
+
+.body{
+        position: fixed;      
+        overflow-y: scroll;
+        width: 100%;
+        top: -20px;
+        left: -20px;
+        right: -40px;
+        bottom: -40px;
+        width: auto;
+        height: auto;        
+        background-image: url("@{images}valley.jpg");
+        background-size: 100% 100%;
+        -webkit-filter: blur(1.5px);
+      }
+
+.header{
+        position: relative;
+
+      div{
+        float: left;
+        color: #000;
+        font-family: 'Exo', sans-serif;
+        font-size: 50px;
+        font-weight: 400;
+      }
+
+      div span{
+        color: #F29E20 !important;
+      }
+}
