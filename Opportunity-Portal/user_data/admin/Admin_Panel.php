@@ -15,66 +15,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Welcome to Admin Panel</title>
 
-    <style>
-      @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
-      @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
-
-     .body{
-        position: fixed;      
-        overflow-y: scroll;
-        width: 100%;
-        top: -20px;
-        left: -20px;
-        right: -40px;
-        bottom: -40px;
-        width: auto;
-        height: auto;        
-        background-image: url(../images/adminPanel.jpg);
-        background-size: 100% 100%;
-        -webkit-filter: blur(2px);
-      
-      } 
-
-      
-
-      .jumbotron{        
-        padding:30px 30px;
-        margin-bottom:50px;
-        color:inherit;
-        background:url('http://content.wallpapers-room.com/resolutions/1440x900/T/Wallpapers-room_com___The_Wood_Experiment_by_Delta909_1440x900.jpg');     
-        
-      }
-
-      
-
-      #jumbotron-one{
-        margin-bottom: 0px
-      }
-
-      #container-one {
-          background-image: url(../../img/adminPanel.jpg);
-          background-size: cover;
-          margin-top: 0px;
-          background-attachment: fixed;
-          height: auto;
-          width: 100%
-
-      }
-
-      .header{
-        color: #000;
-        font-family: 'Exo', sans-serif;
-        font-size: 50px;
-        font-weight: 400;
-      }
-
-      .btntext{
-        font-family: 'Exo', sans-serif;
-        font-size: 20px;
-        font-style: bold;
-      }
-
-    </style>
+    <!-- CSS for page Background -->
+    <link href="../../css/Admin_Panel.css" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">

@@ -45,31 +45,8 @@
         }
     </script>
 
-      <style>
-        @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
-        @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
-
-        .jumbotron{        
-        padding:30px 30px;
-        margin-bottom:50px;
-        color:inherit;
-        background:url('http://theme-background-videos.s3.amazonaws.com/blue.jpg');
-      }
-
-        #jumbotron-one{
-          margin-bottom: 0px
-        }
-
-        .header{
-        color: #fff;
-        font-family: 'Exo', sans-serif;
-        font-size: 50px;
-        font-weight: 800;
-        text-shadow: 2px 2px #000;
-      }
-
-
-      </style>
+        <!-- CSS for page Background -->
+        <link href="../../css/user_details.css" rel="stylesheet">
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

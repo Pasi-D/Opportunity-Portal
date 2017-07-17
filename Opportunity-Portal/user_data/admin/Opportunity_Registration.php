@@ -44,49 +44,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Opportunity Registration</title>
 
-    <style>
-
-
-      @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
-      @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
-
-        article, aside, figure, footer, header, hgroup, 
-        menu, nav, section { display: block; }
-
-      .body{
-        position: fixed;      
-        overflow-y: scroll;
-        width: 100%;
-        top: -20px;
-        left: -20px;
-        right: -40px;
-        bottom: -40px;
-        width: auto;
-        height: auto;        
-        background-image: url(../../img/valley.jpg);
-        background-size: 100% 100%;
-        -webkit-filter: blur(1.5px);
-      }
-
-      .header{
-          position: relative;
-          /*top: calc(50% - 250px);
-          left: calc(50% - 167px);*/  
-      }
-
-      .header div{
-        float: left;
-        color: #000;
-        font-family: 'Exo', sans-serif;
-        font-size: 50px;
-        font-weight: 400;
-      }
-
-      .header div span{
-        color: #F29E20 !important;
-      }
-
-    </style>
+    <!-- CSS for page Background -->
+    <link href="../../css/Opportunity_Registration.css" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
